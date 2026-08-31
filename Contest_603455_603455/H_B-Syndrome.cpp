@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+#define FAST ios::sync_with_stdio(0),cin.tie(0),cout.tie(0)
+#define rall(x) x.rbegin(),x.rend()
+#define all(x) x.begin(),x.end()
+typedef long long ll;
+using namespace std;
+
+void tc() {
+    ll a, b;
+    cin >> a >> b;
+    if(b%a) cout << "NO\n";
+    else cout << "YES\n";
+}
+signed main() {
+    FAST;
+    int exe = 1;
+    cin >> exe;
+    while ( exe-- )
+        tc();
+    return 0;
+}
