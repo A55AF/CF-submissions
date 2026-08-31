@@ -1,0 +1,30 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int main(){
+	int a, b;
+	int mx, mn;
+	while (true) {
+		int sum = 0;
+		cin >> a >> b;
+		if ( a > 0 && b > 0 ) {
+			mx = a; mn = b;
+			if (b > a) {
+				mx = b;
+				mn = a;
+			}
+			for (int i = mn; i <= mx; ++i) {
+				sum += i;
+				cout << i << " ";
+			}
+			cout << "sum =" << sum << endl;
+		}
+		else if (a <= 0 || b <= 0) {
+			break;
+		}
+	}
+	return 0;
+}

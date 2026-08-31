@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t;
+    while ( t-- ){
+        long long n;
+        cin >> n;
+        long long o = 0;
+        while ( n > 0 ){
+            if ( n % 2 == 1 ){
+                o++;
+            }
+            n/=2;
+        }
+        long long sum = 0;
+        for ( int i = 0 ; i < o ; ++i ){
+            sum += 1 * pow(2, i);
+        }
+        cout << sum << endl ;
+        }
+	return 0;
+}

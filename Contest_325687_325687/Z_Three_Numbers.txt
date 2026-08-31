@@ -1,0 +1,16 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int k , s;
+    cin >> k >> s;
+    int cnt = 0;
+    for (int i = 0 ; i <= k ; ++i ){
+        for ( int y = 0 ; y <= k ; ++y ){
+            if ( s - i - y >= 0 && s - i - y <= k ){
+                cnt++;
+            }
+        }
+    }
+    cout << cnt ;
+    return 0;
+}

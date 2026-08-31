@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n,e = 1;
+    cin >> n;
+    int s = n;
+    while ( n-- ){
+        for (int x = 1 ; x<=n ; ++x){
+            cout <<" ";
+        }
+        for ( int i = 1 ; i<=e ; ++i){
+            cout << "*";
+        }
+        cout << endl;
+        e += 2;
+    }
+    int p = e - 2;
+    e = 1;
+    n = s;
+    do {
+        for ( int j = s; j < n ; ++j ){
+            cout << " ";
+        }
+        for ( int o = p ; o >= e ; --o ){
+            cout << "*";
+        }
+        cout << endl;
+        e += 2;
+        --s;
+    }while ( s >= 0 );
+	return 0;
+}

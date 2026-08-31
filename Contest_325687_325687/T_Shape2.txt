@@ -1,0 +1,18 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n , num = 1;
+    cin >> n;
+    while ( n-- ){
+        for ( int x = n ; x >= 1 ; --x ){
+            cout << " ";
+        }
+        for ( int i = 1 ; i <= num ; ++i ){
+                cout <<"*";
+        }
+        cout << endl ;
+        num += 2;
+    }
+	return 0;
+}

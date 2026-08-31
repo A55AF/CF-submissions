@@ -1,0 +1,40 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int n ,en ,cnt,res = 0;
+    cin>>n;
+    en = n;
+    vector<int>a;
+    while (true){
+        if ( n == 0 )
+            break;
+        else{
+             a.push_back(n%10);
+        }
+        n /= 10;
+    }
+     for ( int i = 0 , x = a.size() - 1; i < (a.size() / 2) ; ++i , --x){
+                if ( a[i] == a[x]){
+                   cnt += 2;
+                }
+
+        }
+    if ( cnt == a.size() || a.size() - cnt == 1 ){
+        cout << en <<endl;
+        cout << "YES";
+        return 0;
+    }
+    else{
+        for ( int y = 0 ; y < a.size() ; ++y){
+            for ( int o = y+1 ; o < a.size(); ++o  ){
+                    a[y] *= 10;
+            }
+                res += a[y];
+        }
+        cout << res;
+        cout << "\nNO";
+    }
+
+    return 0;
+}
