@@ -1,0 +1,79 @@
+#include <bits/stdc++.h>
+
+#define ASSAF ios::sync_with_stdio(0), cin.tie(0), cout.tie(0)
+#define sz(v) v.size()
+#define f(a) a.first
+#define s(a) a.second
+#define all(v) v.begin(), v.end()
+#define rall(v) v.rbegin(), v.rend()
+#define pb push_back
+#define print(x)           \
+    for (auto it : x)      \
+    {                      \
+        cout << it << " "; \
+    }
+typedef long long ll;
+using namespace std;
+
+// assaf
+//  /﹋\
+// (҂`_´)
+// <,︻╦╤─ - - - -  accepted
+// /﹋\
+
+void accepted()
+{
+    int n, l, r;
+    cin >> n >> l >> r;
+    string s;
+    cin >> s;
+    if (l == r)
+    {
+        for (int i = 0; i < l; i++)
+        {
+            multiset<char> ans;
+            for (int j = i; j < n; j += l)
+            {
+                ans.insert(s[j]);
+            }
+            for (int j = i; j < n; j += l)
+            {
+                s[j] = *ans.begin();
+                ans.erase(ans.begin());
+            }
+        }
+        cout << s ;
+    }
+    else
+    {
+        multiset<char> ans;
+        int tar = (n - l);
+        for (int i = 0; i < n; i++)
+        {
+            if (i < tar || n - i - 1 < tar)
+                ans.insert(s[i]);
+        }
+        for (int i = 0; i < n; i++)
+        {
+            if (i < tar || n - i - 1 < tar)
+            {
+                s[i] = *ans.begin();
+                ans.erase(ans.begin());
+            }
+        }
+        cout << s;
+    }
+}
+
+int main()
+{
+    ASSAF;
+    int exe = 1;
+    // cin >> exe;
+    while (exe--)
+    {
+        accepted();
+        // cout << "\n";
+    }
+    return 0;
+}
