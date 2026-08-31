@@ -1,0 +1,17 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+	int n ;
+	cin >> n ;
+	char x[n] ;
+	int arr[n] ;
+	long long result = 0;
+	cin >> x ;
+	for ( int i = 0 ; i < n ; i++ ){
+		arr[i] = x[i] - 48;
+		result += arr[i] ;
+	}
+	cout << result ;
+	return 0;
+}
