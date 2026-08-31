@@ -2,8 +2,8 @@ name: Codeforces AutoPush
 
 on:
   schedule:
-    # Run every 30 minutes
-    - cron: "*/30 * * * *"
+    # Run every 12 hours
+    - cron: "0 */12 * * *"
   workflow_dispatch: # Allow manual trigger from GitHub UI
 
 permissions:
