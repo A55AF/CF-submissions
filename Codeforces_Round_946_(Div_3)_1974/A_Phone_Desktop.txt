@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+#define ASSAF ios::sync_with_stdio(0),cin.tie(0),cout.tie(0)
+using namespace std;
+
+// assaf
+//  /﹋\
+// (҂`_´)
+// <,︻╦╤─ - - - -  accepted
+// /﹋\
+↓↓↓ START FROM HERE ↓↓↓
+
+int main(){
+    ASSAF;
+    int t ;
+    cin >>t ;
+    while ( t-- ){
+        int x , y ;
+        cin >> x >> y ;
+        int ans = (y+1)/2;
+        x -= ans*7 + 4*(y%2==1);
+        ans += (x+14)/15 * (x>0);
+        cout << ans << '\n' ;
+    }
+    return 0;
+}

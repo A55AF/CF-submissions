@@ -1,0 +1,73 @@
+#include<bits/stdc++.h>
+
+#define ASSAF ios::sync_with_stdio(0),cin.tie(0),cout.tie(0)
+#define sz(v) v.size()
+#define all(x) x.begin(),x.end()
+#define rall(x) x.rbegin(),x.rend()
+#define pb push_back
+#define print(x) for ( auto it : x ){ cout << it << " ";}
+typedef long long ll;
+using namespace std;
+
+// assaf
+//  /﹋\
+// (҂`_´)
+// <,︻╦╤─ - - - -  accepted
+// /﹋\
+
+void accepted() {
+    int n;
+    cin >> n;
+    string s;
+    cin >> s;
+    int N = 0, S = 0, W = 0, E = 0;
+    for ( int i = 0 ; i < n ; i++ ){
+        if ( s[i] == 'N' ) N++;
+        else if ( s[i] == 'S' ) S++;
+        else if ( s[i] == 'W' ) W++;
+        else E++;
+    }
+    int up = 0 , down = 0 , right = 0 , left = 0;
+    bool p1 = 0 , p2 = 0 , f1 = true , f2 = true , f3 = true , f4 = true;
+    if ( N % 2 && S % 2 ) up = 1 , down = 1 , f1 = false , f2 = false;
+    else if ( !(N%2) && !(S%2) );
+    else return void(cout << "NO" );
+    if ( (W%2) && (E%2) ) right = 0 , left =0 , f3 = false , f4 = false ;
+    else if ( !(W%2) && !(E%2) );
+    else return void(cout << "NO" );
+    char ans[n];
+    for ( int i = 0 ; i < n ; i++ ) {
+        if ( s[i] == 'N' ){
+            if ( f1 ) up ^= 1;
+            if ( up ) ans[i] = 'R' , p1 = true , f1 = true;
+            else ans[i] = 'H' , p2 = true , f1 = true ;
+        }else if ( s[i] == 'S' ){
+            if ( f2 ) down ^= 1 ;
+            if ( down ) ans[i] = 'R' , p1 = true , f2 = true ;
+            else ans[i] = 'H' , p2 = true , f2 = true ;
+        }else if ( s[i] =='E' ){
+            if ( f3 ) left ^= 1;
+            if ( left ) ans[i] = 'R' , p1 = true , f3 = true ;
+            else ans[i] = 'H' , p2 = true , f3 = true ;
+        }else{
+            if ( f4 ) right ^= 1 ;
+            if ( right ) ans[i] = 'R' , p1 = true , f4 = true ;
+            else ans[i] = 'H' , p2 = true , f4 = true ;
+        }
+    }
+    if ( !p1 || !p2 ) return void(cout << "NO");
+    for ( int i = 0 ; i < n ; i++ )
+        cout << ans[i] ;
+}
+
+int main() {
+    ASSAF;
+    int exe = 1;
+    cin >> exe;
+    while (exe--) {
+        accepted();
+        cout << "\n";
+    }
+    return 0;
+}
+

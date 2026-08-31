@@ -1,0 +1,20 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int t ;
+    cin >> t ;
+    while ( t-- ){
+        pair<int,string> num[3] ;
+        for ( int i = 0 ; i < 3 ; i++ ){
+            cin >> num[i].first;
+        }
+        num[0].second = "First" ;
+        num[1].second = "Second";
+        num[2].second = "Third" ;
+        sort(num,num+3);
+        cout << num[0].second << "\n" ;
+    }
+    return 0;
+}
